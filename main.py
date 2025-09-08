@@ -1,4 +1,4 @@
-# import shit
+# import 
 import os
 import yfinance as yf
 import pandas as pd
@@ -22,7 +22,7 @@ else:
     stockHist = stock.history(period="max")
     stockHist.to_json(dataPath)
 
-#i forgot
+#get actual close
 data = stockHist[["Close"]]
 data = data.rename(columns = {'Close':'Actual_Close'})
 
@@ -61,7 +61,7 @@ fullPredictors = predictors + ["weekly_mean", "quarterly_mean", "annual_mean", "
 
 model = RandomForestClassifier(n_estimators=1000, min_samples_split=2000, random_state=1)
 
-#model stuff (I HAVE NO IDEA HOW THIS WORKS)
+#model
 
 def backtest(data, model, predictors, start=1000, step=50):
     predictions = []
